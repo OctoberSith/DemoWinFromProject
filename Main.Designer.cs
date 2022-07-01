@@ -37,9 +37,10 @@ namespace DemoWinFromProject
             this.lblAdd = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtLast = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtFirst = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLast
@@ -93,10 +94,10 @@ namespace DemoWinFromProject
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.Yellow;
+            this.lblTitle.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(776, 57);
@@ -111,26 +112,37 @@ namespace DemoWinFromProject
             this.txtLast.Size = new System.Drawing.Size(100, 20);
             this.txtLast.TabIndex = 7;
             // 
-            // textBox1
+            // txtCity
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 288);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtCity.Location = new System.Drawing.Point(88, 288);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 20);
+            this.txtCity.TabIndex = 8;
             // 
-            // textBox2
+            // txtAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(88, 262);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtAddress.Location = new System.Drawing.Point(88, 262);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtAddress.TabIndex = 9;
             // 
-            // textBox3
+            // txtFirst
             // 
-            this.textBox3.Location = new System.Drawing.Point(88, 236);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtFirst.Location = new System.Drawing.Point(88, 236);
+            this.txtFirst.Name = "txtFirst";
+            this.txtFirst.Size = new System.Drawing.Size(100, 20);
+            this.txtFirst.TabIndex = 10;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(88, 314);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 38);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "ADD";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Main
             // 
@@ -139,9 +151,10 @@ namespace DemoWinFromProject
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtFirst);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtLast);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblCity);
@@ -150,6 +163,7 @@ namespace DemoWinFromProject
             this.Controls.Add(this.lblLast);
             this.Controls.Add(this.lblAdd);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,8 +179,9 @@ namespace DemoWinFromProject
         private System.Windows.Forms.Label lblAdd;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtLast;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtFirst;
+        private System.Windows.Forms.Button btnSave;
     }
 }
