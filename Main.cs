@@ -9,59 +9,92 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace DemoWinFromProject
 {
     
     public partial class Main : Form
     {
+        //Set Variables
+        AddCustomer addCust = new AddCustomer();
+        DeleteCustomer delCust = new DeleteCustomer();
+        private int count = 0;
+        private int added = 0;
+
+        //Add Method
+        private void DisplayAdd()
+        {
+          if (btnAdd.Text == "Add Customer" && btnAdd.BackColor == Color.Gold)
+          {
+              this.Controls.Remove(addCust);
+              btnAdd.BackColor = SystemColors.Control;
+              count -= 1;
+              added -= 1;
+            }
+          else if (btnAdd.Text == "Add Customer")
+           {
+              addCust.Location = new Point(10, 60);
+              this.Controls.Add(addCust);
+              btnAdd.BackColor = Color.Gold;
+              count += 1;
+              added += 1;
+            }
+        }
+
+        //Delete Method
+        private void DisplayDel()
+        {
+            if (btnDelete.Text == "Delete Customer" && btnDelete.BackColor == Color.Gold)
+            {
+                this.Controls.Remove(delCust);
+                btnDelete.BackColor = SystemColors.Control;
+                count -= 1;
+                added -= 1;
+            }
+            else if (btnDelete.Text == "Delete Customer")
+            {
+                delCust.Location = new Point(210, 60);
+                this.Controls.Add(delCust);
+                btnDelete.BackColor = Color.Gold;
+                count += 1;
+                added += 1;
+            }
+        }
+
+        //Change Heading
+        private void ChangeHead()
+        {
+            if(added >= 1)
+            {
+                gbxUser.Text.Concat(" : " + count + " of " + added);
+            }
+            else if (added == 0)
+            {
+                gbxUser.Text = "Menu";
+            }
+        }
 
         public Main()
         {
             InitializeComponent();
         }
 
-        private void lblAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            //this.Controls.Add(addCust);
+            //btnAdd.BackColor = Color.Gold;
+            DisplayAdd();
+            ChangeHead();
 
         }
 
-        private void lblLast_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-            //Load Customer Object
-            Customers customers = new Customers();
-            customers.LastName = txtLast.Text;
-            customers.FirstName = txtFirst.Text;
-            customers.Address = txtAddress.Text;
-            customers.City = txtCity.Text;
-
-            //Grab Configuration String
-            string constring = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-
-            //Create SQL Query
-            string sqlQuery = @"INSERT INTO Customers (LastName, FirstName, Address, City)
-                                values (@LastName, @FirstName, @Address, @City)";
-
-            //Open a disconnected connection type
-            using (SqlConnection con = new SqlConnection(constring))
-            {
-                con.Open();
-                SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("LastName", customers.LastName.ToUpper());
-                command.Parameters.AddWithValue("FirstName",customers.FirstName.ToUpper());
-                command.Parameters.AddWithValue("Address", customers.Address.ToUpper()); ;
-                command.Parameters.AddWithValue("City", customers.City.ToUpper());
-                command.ExecuteNonQuery();
-            }
-
-            MessageBox.Show("Customer is Added to Database");
+            //this.Controls.Add(delCust);
+            //btnDelete.BackColor = Color.Gold;
+            DisplayDel();
+            ChangeHead();
         }
     }
 }
