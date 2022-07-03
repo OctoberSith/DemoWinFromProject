@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using DemoWinFromProject.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,8 +17,8 @@ namespace DemoWinFromProject
         //Set Variables
         AddCustomer addCust = new AddCustomer();
         DeleteCustomer delCust = new DeleteCustomer();
-        private int count = 0;
-        private int added = 0;
+        public int count = 0;
+        //public List<Customers> customersList = new List<Customers>();
 
         //Add Method
         private void DisplayAdd()
@@ -29,7 +28,7 @@ namespace DemoWinFromProject
               this.Controls.Remove(addCust);
               btnAdd.BackColor = SystemColors.Control;
               count -= 1;
-              added -= 1;
+              ChangeHead();
             }
           else if (btnAdd.Text == "Add Customer")
            {
@@ -37,7 +36,7 @@ namespace DemoWinFromProject
               this.Controls.Add(addCust);
               btnAdd.BackColor = Color.Gold;
               count += 1;
-              added += 1;
+              ChangeHead();
             }
         }
 
@@ -49,7 +48,7 @@ namespace DemoWinFromProject
                 this.Controls.Remove(delCust);
                 btnDelete.BackColor = SystemColors.Control;
                 count -= 1;
-                added -= 1;
+                ChangeHead();
             }
             else if (btnDelete.Text == "Delete Customer")
             {
@@ -57,18 +56,18 @@ namespace DemoWinFromProject
                 this.Controls.Add(delCust);
                 btnDelete.BackColor = Color.Gold;
                 count += 1;
-                added += 1;
+                ChangeHead();
             }
         }
 
         //Change Heading
         private void ChangeHead()
         {
-            if(added >= 1)
+            if (count >= 1)
             {
-                gbxUser.Text.Concat(" : " + count + " of " + added);
+                gbxUser.Text = "Menu:Showing[" + count + "]";
             }
-            else if (added == 0)
+            else
             {
                 gbxUser.Text = "Menu";
             }
@@ -81,20 +80,17 @@ namespace DemoWinFromProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //this.Controls.Add(addCust);
-            //btnAdd.BackColor = Color.Gold;
             DisplayAdd();
-            ChangeHead();
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            //this.Controls.Add(delCust);
-            //btnDelete.BackColor = Color.Gold;
             DisplayDel();
-            ChangeHead();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+      
         }
     }
 }

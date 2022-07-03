@@ -31,9 +31,11 @@ namespace DemoWinFromProject
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbxUser = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dataGridViewCust = new System.Windows.Forms.DataGridView();
             this.gbxUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCust)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -42,9 +44,9 @@ namespace DemoWinFromProject
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblTitle.Location = new System.Drawing.Point(15, 9);
+            this.lblTitle.Location = new System.Drawing.Point(10, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(775, 50);
+            this.lblTitle.Size = new System.Drawing.Size(778, 50);
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Administration Menu";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,6 +65,17 @@ namespace DemoWinFromProject
             this.gbxUser.TabStop = false;
             this.gbxUser.Text = "Menu ";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(22, 147);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(185, 94);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete Customer";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
@@ -76,16 +89,13 @@ namespace DemoWinFromProject
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnDelete
+            // dataGridViewCust
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(22, 147);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(185, 94);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete Customer";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.dataGridViewCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCust.Location = new System.Drawing.Point(410, 62);
+            this.dataGridViewCust.Name = "dataGridViewCust";
+            this.dataGridViewCust.Size = new System.Drawing.Size(380, 298);
+            this.dataGridViewCust.TabIndex = 13;
             // 
             // Main
             // 
@@ -94,12 +104,15 @@ namespace DemoWinFromProject
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1034, 792);
+            this.Controls.Add(this.dataGridViewCust);
             this.Controls.Add(this.gbxUser);
             this.Controls.Add(this.lblTitle);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.gbxUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCust)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -109,5 +122,6 @@ namespace DemoWinFromProject
         private System.Windows.Forms.GroupBox gbxUser;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dataGridViewCust;
     }
 }

@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using DemoWinFromProject.Models;
 using System.Configuration;
+using Models;
 
 namespace DemoWinFromProject
 {
@@ -49,7 +49,7 @@ namespace DemoWinFromProject
             }
 
             MessageBox.Show("Customer is Added to Database");
-            
+
         }
     }
 }

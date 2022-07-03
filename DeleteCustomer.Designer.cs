@@ -55,9 +55,9 @@ namespace DemoWinFromProject
             this.lblFind.AutoSize = true;
             this.lblFind.Location = new System.Drawing.Point(10, 132);
             this.lblFind.Name = "lblFind";
-            this.lblFind.Size = new System.Drawing.Size(124, 13);
+            this.lblFind.Size = new System.Drawing.Size(94, 13);
             this.lblFind.TabIndex = 1;
-            this.lblFind.Text = "Find Customer To Delete";
+            this.lblFind.Text = "Remove Customer";
             // 
             // lblDelLast
             // 
@@ -124,6 +124,7 @@ namespace DemoWinFromProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.rtbFind);
@@ -134,7 +135,7 @@ namespace DemoWinFromProject
             this.Controls.Add(this.lblFind);
             this.Controls.Add(this.lblDelete);
             this.Name = "DeleteCustomer";
-            this.Size = new System.Drawing.Size(200, 300);
+            this.Size = new System.Drawing.Size(198, 298);
             this.ResumeLayout(false);
             this.PerformLayout();
 

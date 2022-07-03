@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DemoWinFromProject.Models;
 using System.Data.SqlClient;
 using System.Configuration;
+using Models;
 
 namespace DemoWinFromProject
 {   
@@ -53,10 +53,10 @@ namespace DemoWinFromProject
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(sqlQuery, con);
-                command.Parameters.AddWithValue("@FirstName",p_custSearch.FirstName);
+                command.Parameters.AddWithValue("@FirstName", p_custSearch.FirstName);
                 command.Parameters.AddWithValue("@LastName", p_custSearch.LastName);
                 SqlDataReader reader = command.ExecuteReader();
-                while(reader.Read())
+                while (reader.Read())
                 {
                     p_custFind.CustomerID = reader.GetInt32(0);
                     p_custFind.FirstName = reader.GetString(1);
@@ -64,7 +64,7 @@ namespace DemoWinFromProject
                 }
             }
             rtbFind.Clear();
-            rtbFind.AppendText("ID#: " + p_custFind.CustomerID +"\n");
+            rtbFind.AppendText("ID#: " + p_custFind.CustomerID + "\n");
             rtbFind.AppendText(p_custFind.FirstName + "\n" + p_custFind.LastName);
         }
 

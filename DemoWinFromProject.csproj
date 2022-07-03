@@ -77,7 +77,6 @@
     <Compile Include="DeleteCustomer.Designer.cs">
       <DependentUpon>DeleteCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customers.cs" />
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +130,15 @@
     <Content Include="images\add_customer.png" />
     <Content Include="images\October Sith.png" />
     <Content Include="images\remove_customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectModels\Models.csproj">
+      <Project>{a4e267a3-1c80-4bfa-8429-5b71485a73f2}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -132,6 +132,7 @@ namespace DemoWinFromProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtFirst);
             this.Controls.Add(this.txtAddress);
@@ -143,7 +144,7 @@ namespace DemoWinFromProject
             this.Controls.Add(this.lblLast);
             this.Controls.Add(this.lblAdd);
             this.Name = "AddCustomer";
-            this.Size = new System.Drawing.Size(200, 300);
+            this.Size = new System.Drawing.Size(198, 298);
             this.ResumeLayout(false);
             this.PerformLayout();
 
