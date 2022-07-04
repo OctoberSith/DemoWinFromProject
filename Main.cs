@@ -117,5 +117,13 @@ namespace DemoWinFromProject
         {
             dataGridViewCust.DataSource = CustomersData;
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            List<Customers> refreshcusts = repo.GetAll();
+            BindingSource source = new BindingSource();
+            source.DataSource = refreshcusts;
+            dataGridViewCust.DataSource = source;
+        }
     }
 }

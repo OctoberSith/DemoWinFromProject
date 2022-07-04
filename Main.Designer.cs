@@ -37,6 +37,7 @@ namespace DemoWinFromProject
             this.dataGridViewCust = new System.Windows.Forms.DataGridView();
             this.flowLayoutCust = new System.Windows.Forms.FlowLayoutPanel();
             this.lblGraphic = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.gbxUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCust)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@ namespace DemoWinFromProject
             // gbxUser
             // 
             this.gbxUser.BackColor = System.Drawing.Color.Black;
+            this.gbxUser.Controls.Add(this.btnRefresh);
             this.gbxUser.Controls.Add(this.btnDelete);
             this.gbxUser.Controls.Add(this.btnAdd);
             this.gbxUser.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -71,7 +73,7 @@ namespace DemoWinFromProject
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(6, 83);
+            this.btnDelete.Location = new System.Drawing.Point(6, 62);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 31);
             this.btnDelete.TabIndex = 2;
@@ -84,7 +86,7 @@ namespace DemoWinFromProject
             this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAdd.FlatAppearance.BorderSize = 2;
-            this.btnAdd.Location = new System.Drawing.Point(6, 37);
+            this.btnAdd.Location = new System.Drawing.Point(6, 25);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 31);
             this.btnAdd.TabIndex = 0;
@@ -120,6 +122,17 @@ namespace DemoWinFromProject
             this.lblGraphic.Size = new System.Drawing.Size(106, 598);
             this.lblGraphic.TabIndex = 15;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefresh.Location = new System.Drawing.Point(6, 99);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(94, 31);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,5 +163,6 @@ namespace DemoWinFromProject
         private System.Windows.Forms.DataGridView dataGridViewCust;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutCust;
         private System.Windows.Forms.Label lblGraphic;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
