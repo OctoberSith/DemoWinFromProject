@@ -48,8 +48,11 @@ namespace DemoWinFromProject
                 command.ExecuteNonQuery();
             }
 
+            txtLast.Clear();
+            txtFirst.Clear();
+            txtCity.Clear();
+            txtAddress.Clear();
             MessageBox.Show("Customer is Added to Database");
-
         }
     }
 }

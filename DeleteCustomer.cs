@@ -27,6 +27,7 @@ namespace DemoWinFromProject
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Customer Was Deleted !!");
+                //TODO:IMPLEMENT DELETE
             }
             else
             {

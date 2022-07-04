@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWinFromProject", "DemoWinFromProject.csproj", "{7E3201D1-F6DB-48AB-9F59-5F0CA873C549}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL", "..\CustomersDL\DL.csproj", "{D5A3A13D-9BFA-43DC-8CB2-BDFA0B627565}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL", ".\DL\DL.csproj", "{D5A3A13D-9BFA-43DC-8CB2-BDFA0B627565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\ProjectModels\Models.csproj", "{A4E267A3-1C80-4BFA-8429-5B71485A73F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", ".\Models\Models.csproj", "{A4E267A3-1C80-4BFA-8429-5B71485A73F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

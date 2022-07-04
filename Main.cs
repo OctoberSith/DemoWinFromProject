@@ -19,24 +19,28 @@ namespace DemoWinFromProject
         //Set Variables
         AddCustomer addCust = new AddCustomer();
         DeleteCustomer delCust = new DeleteCustomer();
-        public int count = 0;
+        int count = 0;
         public List<Customers> CustomersData { get; set; }
         CustomersRepo repo = new CustomersRepo();
 
         //Add Method
         private void DisplayAdd()
         {
+          addCust.BackColor = SystemColors.Control;
+
           if (btnAdd.Text == "Add Customer" && btnAdd.BackColor == Color.Gold)
           {
-              this.Controls.Remove(addCust);
+              //this.Controls.Remove(addCust);
+              flowLayoutCust.Controls.Remove(addCust);
               btnAdd.BackColor = SystemColors.Control;
               count -= 1;
               ChangeHead();
             }
           else if (btnAdd.Text == "Add Customer")
            {
-              addCust.Location = new Point(10, 60);
-              this.Controls.Add(addCust);
+              //addCust.Location = new Point(10, 60);
+              //this.Controls.Add(addCust);
+              flowLayoutCust.Controls.Add(addCust);
               btnAdd.BackColor = Color.Gold;
               count += 1;
               ChangeHead();
@@ -47,17 +51,21 @@ namespace DemoWinFromProject
         //Delete Method
         private void DisplayDel()
         {
+            delCust.BackColor = SystemColors.Control;
+
             if (btnDelete.Text == "Delete Customer" && btnDelete.BackColor == Color.Gold)
             {
-                this.Controls.Remove(delCust);
+                //this.Controls.Remove(delCust);
+                flowLayoutCust.Controls.Remove(delCust);
                 btnDelete.BackColor = SystemColors.Control;
                 count -= 1;
                 ChangeHead();
             }
             else if (btnDelete.Text == "Delete Customer")
             {
-                delCust.Location = new Point(210, 60);
-                this.Controls.Add(delCust);
+                //delCust.Location = new Point(210, 60);
+                //this.Controls.Add(delCust);
+                flowLayoutCust.Controls.Add(delCust);
                 btnDelete.BackColor = Color.Gold;
                 count += 1;
                 ChangeHead();
@@ -70,7 +78,7 @@ namespace DemoWinFromProject
         {
             if (count >= 1)
             {
-                gbxUser.Text = "Menu:Showing[" + count + "]";
+                gbxUser.Text = "Menu:[" + count + "]";
             }
             else
             {
@@ -78,6 +86,14 @@ namespace DemoWinFromProject
             }
         }
 
+        private void RefreshGrid()
+        {
+            List<Customers> CData = new List<Customers>();
+            CustomersRepo repoPass = new CustomersRepo();
+            CData = repoPass.GetAll();
+            dataGridViewCust.DataSource = CData;
+            dataGridViewCust.Refresh();
+        }
 
 
         //Main Form Controls
