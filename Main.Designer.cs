@@ -92,7 +92,7 @@ namespace DemoWinFromProject
             // dataGridViewCust
             // 
             this.dataGridViewCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCust.Location = new System.Drawing.Point(410, 62);
+            this.dataGridViewCust.Location = new System.Drawing.Point(410, 60);
             this.dataGridViewCust.Name = "dataGridViewCust";
             this.dataGridViewCust.Size = new System.Drawing.Size(380, 298);
             this.dataGridViewCust.TabIndex = 13;

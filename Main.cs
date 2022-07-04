@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,17 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models;
+using DL;
 
 namespace DemoWinFromProject
 {
     
     public partial class Main : Form
     {
+
         //Set Variables
         AddCustomer addCust = new AddCustomer();
         DeleteCustomer delCust = new DeleteCustomer();
         public int count = 0;
-        //public List<Customers> customersList = new List<Customers>();
+        public List<Customers> CustomersData { get; set; }
+        CustomersRepo repo = new CustomersRepo();
 
         //Add Method
         private void DisplayAdd()
@@ -40,6 +43,7 @@ namespace DemoWinFromProject
             }
         }
 
+
         //Delete Method
         private void DisplayDel()
         {
@@ -60,6 +64,7 @@ namespace DemoWinFromProject
             }
         }
 
+
         //Change Heading
         private void ChangeHead()
         {
@@ -73,8 +78,12 @@ namespace DemoWinFromProject
             }
         }
 
+
+
+        //Main Form Controls
         public Main()
         {
+            CustomersData = repo.GetAll();
             InitializeComponent();
         }
 
@@ -90,7 +99,7 @@ namespace DemoWinFromProject
 
         private void Main_Load(object sender, EventArgs e)
         {
-      
+            dataGridViewCust.DataSource = CustomersData;
         }
     }
 }
