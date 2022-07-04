@@ -77,6 +77,12 @@
     <Compile Include="DeleteCustomer.Designer.cs">
       <DependentUpon>DeleteCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="snoozeAlarm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="snoozeAlarm.Designer.cs">
+      <DependentUpon>snoozeAlarm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="snoozeAlarm.resx">
+      <DependentUpon>snoozeAlarm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
