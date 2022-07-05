@@ -54,5 +54,10 @@ namespace DemoWinFromProject
             txtAddress.Clear();
             MessageBox.Show("Customer is Added to Database");
         }
+
+        private void AddCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

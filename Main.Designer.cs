@@ -29,7 +29,10 @@ namespace DemoWinFromProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dataGridViewCust = new System.Windows.Forms.DataGridView();
             this.flowLayoutCust = new System.Windows.Forms.FlowLayoutPanel();
@@ -38,17 +41,36 @@ namespace DemoWinFromProject
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.gbxUser = new System.Windows.Forms.GroupBox();
+            this.picBox = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.timerSpace = new System.Windows.Forms.Timer(this.components);
+            this.btnFitGrid2 = new System.Windows.Forms.Button();
+            this.dataGridViewRich = new System.Windows.Forms.DataGridView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblSex = new System.Windows.Forms.Label();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.snoozeAlarm1 = new DemoWinFromProject.snoozeAlarm();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCust)).BeginInit();
             this.gbxUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRich)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTitle.BackColor = System.Drawing.Color.MediumPurple;
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Gold;
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
             this.lblTitle.Location = new System.Drawing.Point(10, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(544, 50);
@@ -58,6 +80,8 @@ namespace DemoWinFromProject
             // 
             // dataGridViewCust
             // 
+            this.dataGridViewCust.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewCust.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewCust.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCust.Location = new System.Drawing.Point(10, 382);
@@ -71,7 +95,7 @@ namespace DemoWinFromProject
             this.flowLayoutCust.BackColor = System.Drawing.Color.Black;
             this.flowLayoutCust.Location = new System.Drawing.Point(10, 63);
             this.flowLayoutCust.Name = "flowLayoutCust";
-            this.flowLayoutCust.Size = new System.Drawing.Size(544, 313);
+            this.flowLayoutCust.Size = new System.Drawing.Size(411, 313);
             this.flowLayoutCust.TabIndex = 14;
             // 
             // lblGraphic
@@ -79,9 +103,9 @@ namespace DemoWinFromProject
             this.lblGraphic.BackColor = System.Drawing.Color.White;
             this.lblGraphic.Image = ((System.Drawing.Image)(resources.GetObject("lblGraphic.Image")));
             this.lblGraphic.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblGraphic.Location = new System.Drawing.Point(560, 293);
+            this.lblGraphic.Location = new System.Drawing.Point(560, 292);
             this.lblGraphic.Name = "lblGraphic";
-            this.lblGraphic.Size = new System.Drawing.Size(106, 458);
+            this.lblGraphic.Size = new System.Drawing.Size(106, 459);
             this.lblGraphic.TabIndex = 15;
             // 
             // btnAdd
@@ -134,6 +158,157 @@ namespace DemoWinFromProject
             this.gbxUser.TabStop = false;
             this.gbxUser.Text = "Menu ";
             // 
+            // picBox
+            // 
+            this.picBox.Image = ((System.Drawing.Image)(resources.GetObject("picBox.Image")));
+            this.picBox.Location = new System.Drawing.Point(428, 63);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(126, 256);
+            this.picBox.TabIndex = 17;
+            this.picBox.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(428, 325);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(62, 17);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "Snooze";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(428, 348);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(76, 17);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "NoSnooze";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(505, 345);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(49, 20);
+            this.numericUpDown1.TabIndex = 20;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // timerSpace
+            // 
+            this.timerSpace.Interval = 1000;
+            this.timerSpace.Tick += new System.EventHandler(this.timerSpace_Tick);
+            // 
+            // btnFitGrid2
+            // 
+            this.btnFitGrid2.Location = new System.Drawing.Point(673, 283);
+            this.btnFitGrid2.Name = "btnFitGrid2";
+            this.btnFitGrid2.Size = new System.Drawing.Size(218, 199);
+            this.btnFitGrid2.TabIndex = 22;
+            this.btnFitGrid2.Text = "Add";
+            this.btnFitGrid2.UseVisualStyleBackColor = true;
+            this.btnFitGrid2.Click += new System.EventHandler(this.btnFitGrid2_Click);
+            // 
+            // dataGridViewRich
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRich.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewRich.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRich.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewRich.Location = new System.Drawing.Point(673, 488);
+            this.dataGridViewRich.Name = "dataGridViewRich";
+            this.dataGridViewRich.Size = new System.Drawing.Size(220, 257);
+            this.dataGridViewRich.TabIndex = 23;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(718, 144);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(102, 21);
+            this.richTextBox1.TabIndex = 24;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(718, 174);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(102, 21);
+            this.richTextBox2.TabIndex = 25;
+            this.richTextBox2.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(718, 204);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(102, 21);
+            this.richTextBox3.TabIndex = 26;
+            this.richTextBox3.Text = "";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(718, 234);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(102, 21);
+            this.richTextBox4.TabIndex = 27;
+            this.richTextBox4.Text = "";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(670, 242);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(24, 13);
+            this.lblCity.TabIndex = 28;
+            this.lblCity.Text = "City";
+            // 
+            // lblSex
+            // 
+            this.lblSex.AutoSize = true;
+            this.lblSex.Location = new System.Drawing.Point(670, 212);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(25, 13);
+            this.lblSex.TabIndex = 29;
+            this.lblSex.Text = "Sex";
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.Location = new System.Drawing.Point(670, 182);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(26, 13);
+            this.lblAge.TabIndex = 30;
+            this.lblAge.Text = "Age";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(670, 152);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 31;
+            this.lblName.Text = "Name";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(672, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 130);
+            this.label1.TabIndex = 32;
+            // 
             // snoozeAlarm1
             // 
             this.snoozeAlarm1.BackColor = System.Drawing.Color.Black;
@@ -148,7 +323,22 @@ namespace DemoWinFromProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(678, 757);
+            this.ClientSize = new System.Drawing.Size(903, 757);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblAge);
+            this.Controls.Add(this.lblSex);
+            this.Controls.Add(this.lblCity);
+            this.Controls.Add(this.richTextBox4);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.dataGridViewRich);
+            this.Controls.Add(this.btnFitGrid2);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.picBox);
             this.Controls.Add(this.snoozeAlarm1);
             this.Controls.Add(this.lblGraphic);
             this.Controls.Add(this.flowLayoutCust);
@@ -161,7 +351,11 @@ namespace DemoWinFromProject
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCust)).EndInit();
             this.gbxUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRich)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +369,21 @@ namespace DemoWinFromProject
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.GroupBox gbxUser;
         private snoozeAlarm snoozeAlarm1;
+        private System.Windows.Forms.PictureBox picBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Timer timerSpace;
+        private System.Windows.Forms.Button btnFitGrid2;
+        private System.Windows.Forms.DataGridView dataGridViewRich;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label1;
     }
 }

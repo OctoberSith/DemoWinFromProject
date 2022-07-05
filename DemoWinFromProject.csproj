@@ -121,6 +121,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include=".editorconfig" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -137,12 +138,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\add_customer.png" />
+    <Content Include="images\matrix.jpg" />
     <Content Include="images\October Sith.png" />
     <Content Include="images\remove_customer.png" />
+    <Content Include="images\space.jpg" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="DL\DL.csproj">
       <Project>{d5a3a13d-9bfa-43dc-8cb2-bdfa0b627565}</Project>

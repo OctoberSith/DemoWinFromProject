@@ -145,6 +145,7 @@ namespace DemoWinFromProject
             this.Controls.Add(this.lblAdd);
             this.Name = "AddCustomer";
             this.Size = new System.Drawing.Size(198, 298);
+            this.Load += new System.EventHandler(this.AddCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
